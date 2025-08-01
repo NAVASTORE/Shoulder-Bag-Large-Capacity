@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoulder Bag Large Capacity - FASHION.ID</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'hitam': '#000000',
+                        'abu-arang': '#36454f',
+                        'emas': '#d4af37',
+                        'sampanye': '#f7e7ce',
+                        'putih-aksen': '#ffffff',
+                    },
+                    fontFamily: {
+                        'heading': ['Poppins', 'sans-serif'],
+                        'body': ['Roboto', 'sans-serif'],
+                    },
+                    animation: {
+                        'slide-in': 'slideIn 0.5s ease-out forwards',
+                        'slide-out': 'slideOut 0.5s ease-out forwards',
+                        'pulse-gold': 'pulseGold 2s infinite',
+                    },
+                    keyframes: {
+                        slideIn: {
+                            '0%': { transform: 'translateX(100%)' },
+                            '100%': { transform: 'translateX(0)' },
+                        },
+                        slideOut: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(100%)' },
+                        },
+                        pulseGold: {
+                            '0%, 100%': { 'box-shadow': '0 0 0 0 rgba(212, 175, 55, 0.7)' },
+                            '50%': { 'box-shadow': '0 0 0 10px rgba(212, 175, 55, 0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(54, 69, 79, 0.9) 0%, rgba(0, 0, 0, 0.85) 100%);
+        }
+        
+        .feature-icon {
+            background: linear-gradient(135deg, #d4af37 0%, #f7e7ce 100%);
+            color: #000;
+        }
+        
+        .countdown-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(247, 231, 206, 0.1) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .price-tag {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .price-tag::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-top: 60px solid #d4af37;
+            border-left: 60px solid transparent;
+            z-index: 1;
+        }
+        
+        .price-tag::after {
+            content: 'DISKON';
+            position: absolute;
+            top: 10px;
+            right: 5px;
+            transform: rotate(45deg);
+            font-size: 10px;
+            font-weight: bold;
+            color: #000;
+            z-index: 2;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 16px;
+        }
+        
+        .gallery-item {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .order-form-container {
+            background: linear-gradient(135deg, rgba(247, 231, 206, 0.2) 0%, rgba(255, 255, 255, 0.15) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .social-proof {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            max-width: 320px;
+            width: 100%;
+        }
+        
+        .proof-item {
+            background: white;
+            border-left: 4px solid #d4af37;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            animation: slide-in 0.5s ease-out forwards;
+        }
+        
+        .proof-avatar {
+            background: linear-gradient(135deg, #d4af37 0%, #f7e7ce 100%);
+            color: #000;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content {
+                padding-top: 100px;
+            }
+            
+            .proof-item {
+                max-width: 90%;
+                right: 5%;
+                left: 5%;
+            }
+        }
+    </style>
+</head>
+<body class="font-body bg-sampanye text-abu-arang">
+    <!-- Social Proof Popup Container -->
+    <div class="social-proof" id="socialProof"></div>
+    
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://img.fantaskycdn.com/4b17a8d452977171ab3b136e595117d3_540x.jfif" alt="Shoulder Bag Large Capacity" class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="relative z-10 container mx-auto px-4 py-16 hero-content">
+            <div class="max-w-2xl glassmorphism p-8 rounded-2xl backdrop-blur-lg">
+                <h1 class="text-4xl md:text-6xl font-heading font-bold text-putih-aksen mb-4">
+                    Shoulder Bag <span class="text-emas">Large Capacity</span>
+                </h1>
+                <p class="text-xl text-sampanye mb-8">
+                    Tampil Stylish dengan Tas Serbaguna yang Praktis dan Elegan
+                </p>
+                
+                <!-- CTA Button -->
+                <button class="bg-emas hover:bg-amber-500 text-hitam font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 animation-pulse-gold w-full md:w-auto">
+                    <i class="fas fa-shopping-bag mr-2"></i>PESAN SEKARANG
+                </button>
+                
+                <!-- Trust Badges -->
+                <div class="flex flex-wrap items-center justify-center gap-6 mt-8 pt-8 border-t border-sampanye">
+                    <div class="flex items-center">
+                        <i class="fas fa-shield-alt text-emas text-2xl mr-2"></i>
+                        <span class="text-putih-aksen">Garansi 1 Tahun</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-truck text-emas text-2xl mr-2"></i>
+                        <span class="text-putih-aksen">Gratis Ongkir</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-undo text-emas text-2xl mr-2"></i>
+                        <span class="text-putih-aksen">14 Hari Retur</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Product Showcase -->
+    <section class="py-16 bg-abu-arang bg-opacity-5">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-hitam mb-4">Desain Premium & Fungsional</h2>
+                <p class="max-w-2xl mx-auto text-lg">Tas selempang dengan kapasitas besar yang tidak mengorbankan gaya dan kenyamanan</p>
+            </div>
+            
+            <!-- Gallery -->
+            <div class="gallery-grid mb-16">
+                <div class="gallery-item rounded-xl overflow-hidden">
+                    <img src="https://img.fantaskycdn.com/2cd827f8c082ffc34d8dcfb5a67b40d5_1920x.jfif" alt="Shoulder Bag Tampak Depan">
+                </div>
+                <div class="gallery-item rounded-xl overflow-hidden">
+                    <img src="https://img.fantaskycdn.com/719bb3a53a1d54c760cea237badf894e_1920x.jfif" alt="Shoulder Bag Tampak Samping">
+                </div>
+                <div class="gallery-item rounded-xl overflow-hidden">
+                    <img src="https://img.fantaskycdn.com/3a14afa73a3b6fac0d6ce04a907f7cc7_1920x.jfif" alt="Shoulder Bag Detail Kantong">
+                </div>
+                <div class="gallery-item rounded-xl overflow-hidden">
+                    <img src="https://img.fantaskycdn.com/a3a409b27ed38826bdb1b1a6fc140cb9.jpeg" alt="Shoulder Bag Tampak Atas">
+                </div>
+                <div class="gallery-item rounded-xl overflow-hidden">
+                    <img src="https://img.fantaskycdn.com/e9881d300af5e6e13ee0ff65f9a11c5e.jpeg" alt="Shoulder Bag Model Wanita">
+                </div>
+                <div class="gallery-item rounded-xl overflow-hidden">
+                    <img src="https://img.fantaskycdn.com/29d4ad6a509632a3c21d93bec2814106.jpeg" alt="Shoulder Bag Ukuran">
+                </div>
+                <div class="gallery-item rounded-xl overflow-hidden">
+                    <img src="https://cdn.wshopon.com/image/c562ec29f32322544cb6d84e0b5aa10519f16dbd-1280.jpeg" alt="Shoulder Bag Warna Hitam">
+                </div>
+                <div class="gallery-item rounded-xl overflow-hidden">
+                    <img src="https://img.fantaskycdn.com/6a1968b09855d25bac918afeaa498bb2_540x.jfif" alt="Shoulder Bag Multi Fungsi">
+                </div>
+            </div>
+            
+            <!-- Video Demo -->
+            <div class="max-w-4xl mx-auto bg-black rounded-2xl overflow-hidden shadow-2xl">
+                <div class="aspect-w-16 aspect-h-9">
+                    <img src="https://img.fantaskycdn.com/f5b0627aed75d9e4c0c26da480273582.gif" alt="Video Demo Shoulder Bag" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Benefits & Features -->
+    <section class="py-16 bg-putih-aksen">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-hitam mb-4">Keunggulan Produk</h2>
+                <p class="max-w-2xl mx-auto text-lg">Desain inovatif yang memenuhi semua kebutuhan harian Anda</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-6 rounded-2xl hover:shadow-xl transition-all duration-300">
+                    <div class="w-20 h-20 rounded-full feature-icon flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-tint text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold mb-3">Tahan Air</h3>
+                    <p>Bahan nilon premium yang melindungi barang-barang Anda dari hujan dan percikan air</p>
+                </div>
+                
+                <div class="text-center p-6 rounded-2xl hover:shadow-xl transition-all duration-300">
+                    <div class="w-20 h-20 rounded-full feature-icon flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-th-large text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold mb-3">Multi Kantong</h3>
+                    <p>8 kompartemen khusus untuk laptop, ponsel, dompet, dan aksesoris lainnya</p>
+                </div>
+                
+                <div class="text-center p-6 rounded-2xl hover:shadow-xl transition-all duration-300">
+                    <div class="w-20 h-20 rounded-full feature-icon flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-expand text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold mb-3">Kapasitas Besar</h3>
+                    <p>Ukuran 37x27x13cm cukup untuk laptop 14", buku, dan kebutuhan harian</p>
+                </div>
+                
+                <div class="text-center p-6 rounded-2xl hover:shadow-xl transition-all duration-300">
+                    <div class="w-20 h-20 rounded-full feature-icon flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-feather text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold mb-3">Ringan & Nyaman</h3>
+                    <p>Hanya 420g dengan tali yang dapat disesuaikan untuk kenyamanan sepanjang hari</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing & Promo -->
+    <section class="py-16 bg-gradient-to-br from-emas/10 to-sampanye/20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-hitam mb-4">Penawaran Spesial</h2>
+                    <p class="text-lg">Diskon 50% hanya untuk waktu terbatas</p>
+                </div>
+                
+                <div class="bg-putih-aksen rounded-2xl shadow-xl overflow-hidden">
+                    <div class="md:flex">
+                        <div class="md:w-1/2 p-8 md:p-12">
+                            <div class="flex items-start gap-4 mb-6">
+                                <div class="text-4xl font-bold text-emas">Rp 179.523</div>
+                                <div class="line-through text-gray-500 text-xl">Rp 359.846</div>
+                            </div>
+                            
+                            <div class="mb-8">
+                                <h3 class="text-xl font-bold mb-4">Spesifikasi Produk:</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-circle text-emas text-xs mt-2 mr-3"></i>
+                                        <span><strong>Bahan:</strong> Nilon Tahan Air Premium</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-circle text-emas text-xs mt-2 mr-3"></i>
+                                        <span><strong>Berat:</strong> 420g (Sangat Ringan)</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-circle text-emas text-xs mt-2 mr-3"></i>
+                                        <span><strong>Ukuran:</strong> 37*27*13cm/14,57*10,63*5,12in</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-circle text-emas text-xs mt-2 mr-3"></i>
+                                        <span><strong>Warna:</strong> Hitam (Elegans & Mudah Dipadankan)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="countdown-box rounded-xl p-6 mb-8">
+                                <h3 class="text-lg font-bold text-center mb-4">PENAWARAN BERAKHIR DALAM:</h3>
+                                <div class="flex justify-center gap-3">
+                                    <div class="text-center">
+                                        <div class="text-3xl font-bold bg-emas text-hitam w-16 h-16 rounded-full flex items-center justify-center">02</div>
+                                        <div class="text-sm mt-1">Jam</div>
+                                    </div>
+                                    <div class="text-3xl font-bold flex items-center">:</div>
+                                    <div class="text-center">
+                                        <div class="text-3xl font-bold bg-emas text-hitam w-16 h-16 rounded-full flex items-center justify-center">45</div>
+                                        <div class="text-sm mt-1">Menit</div>
+                                    </div>
+                                    <div class="text-3xl font-bold flex items-center">:</div>
+                                    <div class="text-center">
+                                        <div class="text-3xl font-bold bg-emas text-hitam w-16 h-16 rounded-full flex items-center justify-center">18</div>
+                                        <div class="text-sm mt-1">Detik</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="md:w-1/2 order-form-container p-8 md:p-12">
+                            <h3 class="text-2xl font-heading font-bold text-center mb-6">Pesan Sekarang</h3>
+                            
+                            <!-- OrderOnline Embed Code -->
+                            <div class="ooef">
+                                <form class="orderonline-embed-form" data-username="nava" data-product-slug="shoulder-bag-large-capacity" data-product-id="688cc1cdc92c9054250c1eab" id="oo-embed-form-shoulder-bag-large-capacity-5493" data-origin="orderonline">
+                                    <div class="ooef-loader"><style>.ooef-loader{visibility: hidden;opacity: 0;position: absolute;left: 0;right: 0;top: 0;bottom: 0;display: flex;justify-content: center;align-items: center;flex-direction: column;animation: ooLoadingIn 10s ease;-webkit-animation: ooLoadingIn 10s ease;animation-fill-mode: forwards;overflow: hidden}@keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}@-webkit-keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}.ooef-loader>div,.ooef-loader>div:after{border-radius: 50%;width: 2.5rem;height: 2.5rem}.ooef-loader>div{font-size: 10px;position: relative;text-indent: -9999em;border: .25rem solid #f5f5f5;border-left: .25rem solid #55c4cf;-webkit-transform: translateZ(0);-ms-transform: translateZ(0);transform: translateZ(0);-webkit-animation: ooLoading 1.1s infinite linear;animation: ooLoading 1.1s infinite linear}.ooef-loader.error>div{border-left: .25rem solid #ff4500;animation-duration: 5s}@-webkit-keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}@keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}</style><div aria-live="polite" role="status"><div>Loading...</div></div></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="py-16 bg-abu-arang bg-opacity-5">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-hitam mb-4">Apa Kata Pelanggan Kami?</h2>
+                <p class="text-lg">Ribuan wanita Indonesia sudah membuktikan kualitas Shoulder Bag Large Capacity</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-putih-aksen rounded-2xl p-6 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-emas flex items-center justify-center text-hitam font-bold mr-4">R</div>
+                        <div>
+                            <h4 class="font-bold">Rani - Jakarta</h4>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Tas ini benar-benar mengubah cara saya berorganisasi. Semua barang ada tempatnya, dan yang paling penting, tidak berat meski diisi banyak barang!"</p>
+                </div>
+                
+                <div class="bg-putih-aksen rounded-2xl p-6 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-emas flex items-center justify-center text-hitam font-bold mr-4">D</div>
+                        <div>
+                            <h4 class="font-bold">Dina - Surabaya</h4>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Desainnya sangat stylish, sering dapat pujian dari teman-teman. Bahan nilonnya juga benar-benar tahan air, sangat praktis di musim hujan."</p>
+                </div>
+                
+                <div class="bg-putih-aksen rounded-2xl p-6 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-emas flex items-center justify-center text-hitam font-bold mr-4">P</div>
+                        <div>
+                            <h4 class="font-bold">Putri - Bandung</h4>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Kapasitasnya besar tapi tidak terlihat bulky. Sangat cocok untuk saya yang sering membawa laptop dan perlengkapan kerja. Harganya juga sangat worth it!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ -->
+    <section class="py-16 bg-putih-aksen">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-hitam mb-4">Pertanyaan Umum</h2>
+                <p class="text-lg">Informasi yang mungkin Anda butuhkan</p>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="border border-sampanye rounded-xl overflow-hidden">
+                    <button class="flex items-center justify-between w-full p-5 text-left font-bold">
+                        <span>Apakah tas ini bisa memuat laptop?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="p-5 pt-0 hidden">
+                        Ya, Shoulder Bag Large Capacity didesain khusus untuk laptop hingga 14 inci dengan bantalan pelindung tambahan.
+                    </div>
+                </div>
+                
+                <div class="border border-sampanye rounded-xl overflow-hidden">
+                    <button class="flex items-center justify-between w-full p-5 text-left font-bold">
+                        <span>Bagaimana cara perawatan tas ini?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="p-5 pt-0 hidden">
+                        Bahan nilon premium sangat mudah dirawat. Cukup lap dengan kain lembab dan sabun ringan. Hindari mesin cuci dan pengering.
+                    </div>
+                </div>
+                
+                <div class="border border-sampanye rounded-xl overflow-hidden">
+                    <button class="flex items-center justify-between w-full p-5 text-left font-bold">
+                        <span>Berapa lama waktu pengiriman?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="p-5 pt-0 hidden">
+                        Pengiriman reguler memakan waktu 2-5 hari kerja. Kami juga menyediakan opsi pengiriman ekspres 1-2 hari kerja dengan biaya tambahan.
+                    </div>
+                </div>
+                
+                <div class="border border-sampanye rounded-xl overflow-hidden">
+                    <button class="flex items-center justify-between w-full p-5 text-left font-bold">
+                        <span>Apakah ada garansi untuk produk ini?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="p-5 pt-0 hidden">
+                        Ya, semua produk kami memiliki garansi 1 tahun untuk cacat produksi. Hubungi kami jika ada masalah dengan produk Anda.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Final CTA -->
+    <section class="py-16 bg-gradient-to-r from-emas/20 to-sampanye/30">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-hitam rounded-3xl p-8 md:p-12 text-center">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-putih-aksen mb-4">Jangan Lewatkan Kesempatan Ini!</h2>
+                <p class="text-sampanye text-xl mb-8">Diskon 50% hanya berlaku untuk waktu terbatas</p>
+                
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button class="bg-emas hover:bg-amber-500 text-hitam font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 animation-pulse-gold">
+                        <i class="fas fa-shopping-bag mr-2"></i>PESAN SEKARANG
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Social Proof Popup Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Customer names and cities
+            const customerNames = ['Vina', 'Dina', 'Kartika', 'Lestari', 'Putri', 'Maya Sari', 'Rani', 'Permata', 'Lestari F'];
+            const customerCities = ['Jakarta', 'Surabaya', 'Bandung', 'Medan', 'Bekasi', 'Tangerang', 'Depok', 'Semarang'];
+            
+            // Function to generate a random social proof notification
+            function generateSocialProof() {
+                const randomName = customerNames[Math.floor(Math.random() * customerNames.length)];
+                const randomCity = customerCities[Math.floor(Math.random() * customerCities.length)];
+                const minutesAgo = Math.floor(Math.random() * 15) + 1;
+                
+                const proofElement = document.createElement('div');
+                proofElement.className = 'proof-item mb-4 p-4 rounded-lg';
+                proofElement.innerHTML = `
+                    <div class="flex items-start">
+                        <div class="proof-avatar w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mr-3">
+                            ${randomName.charAt(0)}
+                        </div>
+                        <div>
+                            <p class="font-bold">${randomName} dari ${randomCity}</p>
+                            <p class="text-sm">Baru saja memesan Shoulder Bag Large Capacity</p>
+                            <p class="text-xs text-gray-500 mt-1">${minutesAgo} menit yang lalu</p>
+                        </div>
+                    </div>
+                `;
+                
+                const container = document.getElementById('socialProof');
+                container.prepend(proofElement);
+                
+                // Auto remove after 5 seconds
+                setTimeout(() => {
+                    proofElement.style.animation = 'slide-out 0.5s ease-out forwards';
+                    setTimeout(() => {
+                        proofElement.remove();
+                    }, 500);
+                }, 5000);
+                
+                // Pause on hover
+                proofElement.addEventListener('mouseenter', () => {
+                    proofElement.dataset.hovered = 'true';
+                });
+                
+                proofElement.addEventListener('mouseleave', () => {
+                    delete proofElement.dataset.hovered;
+                    setTimeout(() => {
+                        if (!proofElement.dataset.hovered) {
+                            proofElement.style.animation = 'slide-out 0.5s ease-out forwards';
+                            setTimeout(() => {
+                                proofElement.remove();
+                            }, 500);
+                        }
+                    }, 1000);
+                });
+            }
+            
+            // Generate the first notification immediately
+            generateSocialProof();
+            
+            // Generate notifications every 10 seconds
+            setInterval(generateSocialProof, 10000);
+            
+            // Initialize OrderOnline form
+            const orderOnlineScript = document.createElement('script');
+            orderOnlineScript.src = 'https://cdn.orderonline.id/js/embed-v2-slim.min.js?v=8.0.4';
+            orderOnlineScript.id = 'oo-embed-js';
+            document.head.appendChild(orderOnlineScript);
+            
+            // FAQ Toggle
+            const faqButtons = document.querySelectorAll('.border-sampanye button');
+            faqButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    content.classList.toggle('hidden');
+                    
+                    const icon = button.querySelector('i');
+                    if (icon.classList.contains('fa-chevron-down')) {
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    } else {
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    }
+                });
+            });
+        });
+    </script>
+    
+    <!-- OrderOnline Embed Script -->
+    <script>
+        if (typeof xLogError != 'function') {
+            var xLogError = function (error) {
+                var req = new XMLHttpRequest();
+                var payload = JSON.stringify({
+                    url: document.location.href,
+                    line: error.line,
+                    stack: error.stack
+                });
+                var params = 'message=' + encodeURIComponent(error.name) + '&payload=' + encodeURIComponent(payload) + '&type=embed&level=error';
+                req.open('POST', 'https://api.orderonline.id/log', true);
+                req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                req.send(params);
+            };
+        }
+        try {
+            if (typeof xEmbedScript != 'function') {
+                var xEmbedScript = function () {
+                    !function(w, d, e, v, id, t, s) {
+                        if (d.getElementById(id)) return;
+                        t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                        s = d.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+                    }(window, document, 'script', 'https://cdn.orderonline.id/js/embed-v2-slim.min.js?v=8.0.4', 'oo-embed-js');
+                };
+            }
+            if (typeof xEmbedInit != 'function') {
+                var xEmbedInit = function (w, n) {
+                    if (w.ooe) return;
+                    n = w.ooe = function() {
+                        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    };
+                    if (!w._ooe) w._ooe = n;
+                    n.push = n;n.loaded = !0;n.version = '8.0.4';n.queue = [];
+                };
+            }
+            xEmbedInit(window);
+            ooe('setup', 'redirect', 'https://nava.orderonline.id');
+            ooe('init', '5f119cd08dcbdb2737678706', '688cc1cdc92c9054250c1eab', '688cc1cdc92c9054250c1eac', 'oo-embed-form-shoulder-bag-large-capacity-5493', {"mode":"page","action":"Klik untuk pemesanan","title":"Form Pemesanan","triggerPixel":true,"triggerGtm":true});
+            if (!window.jQuery) {
+                !function(w, d, e, v, id, t, s) {
+                    if (d.getElementById(id)) return;
+                    t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                    t.addEventListener('load', xEmbedScript);
+                    s = d.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+                }(window, document, 'script', 'https://cdn.orderonline.id/js/vendor/jquery.min.js', 'oo-embed-jquery');
+            } else {
+                xEmbedScript();
+            }
+        } catch (e) {
+            xLogError(e);
+            throw e;
+        }
+    </script>
+</body>
+</html>
